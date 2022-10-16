@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ReservationServiceImpl implements ReservationService {
@@ -20,6 +22,7 @@ public class ReservationServiceImpl implements ReservationService {
 
         Reservation reservation = new Reservation();
 
+        reservation.setId(reservationDto.getId());
         reservation.setCustomerId(reservationDto.getUserId());
         reservation.setArrivalDate(reservationDto.getArrivalDate());
         reservation.setChildren(reservationDto.getChildren());
@@ -33,6 +36,17 @@ public class ReservationServiceImpl implements ReservationService {
 
         reservationRepository.save(reservation);
         return true;
+    }
+
+    @Override
+    public boolean deleteReservation(int id) {
+        reservationRepository.deleteById(id);
+        return true;
+    }
+
+    @Override
+    public List<Reservation> getAllReservation() {
+        return reservationRepository.findAll();
     }
 
 

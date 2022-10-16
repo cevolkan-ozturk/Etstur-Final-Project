@@ -15,6 +15,9 @@ import java.util.Date;
 public class ReservationDto {
 
 
+
+    private int id;
+
     @NotNull(message = "is required")
     @Size(min=1, message = "is requrired")
     private String roomNo;
