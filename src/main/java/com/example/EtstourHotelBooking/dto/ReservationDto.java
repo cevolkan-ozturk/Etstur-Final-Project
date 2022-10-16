@@ -19,15 +19,15 @@ public class ReservationDto {
     private int id;
 
     @NotNull(message = "is required")
-    @Size(min=1, message = "is requrired")
+    @Size(min=1, message = "is required")
     private String roomNo;
 
     @NotNull(message = "is required")
-    @Size(min=1, message = "is requrired")
+    @Size(min=1, message = "is required")
     private double price;
 
     @NotNull(message = "is required")
-    @Size(min=1, message = "is requrired")
+    @Size(min=1, message = "is required")
     private int rooms;
 
     @NotNull (message = "is required")

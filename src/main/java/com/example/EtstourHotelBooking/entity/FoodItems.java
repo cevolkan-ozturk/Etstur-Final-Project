@@ -23,4 +23,7 @@ public class FoodItems {
     @Column(name = "food_name")
     private String name;
 
+    @Column(name = "food_price")
+    private double price;
+
 }

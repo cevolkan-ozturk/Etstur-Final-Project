@@ -13,6 +13,8 @@ public interface ReservationService {
 
     public List<Reservation> getAllReservation ();
 
+    public Reservation findReservationById(int id);
+
 
 
 

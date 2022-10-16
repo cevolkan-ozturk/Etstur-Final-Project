@@ -21,6 +21,9 @@ public class Inventory {
     @Column (name = "inventory_id")
     private long id;
 
+    @Column (name = "inventory_name")
+    private String inventoryName;
+
     @Column (name = "inventory_type")
     private String inventoryType;
 

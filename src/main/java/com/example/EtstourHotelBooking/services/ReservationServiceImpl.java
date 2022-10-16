@@ -2,6 +2,7 @@ package com.example.EtstourHotelBooking.services;
 
 import com.example.EtstourHotelBooking.dto.ReservationDto;
 import com.example.EtstourHotelBooking.entity.Reservation;
+import com.example.EtstourHotelBooking.exception.GenericNotFoundException;
 import com.example.EtstourHotelBooking.repository.ReservationRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -48,6 +50,19 @@ public class ReservationServiceImpl implements ReservationService {
     public List<Reservation> getAllReservation() {
         return reservationRepository.findAll();
     }
+
+    @Override
+    public Reservation findReservationById(int id) throws GenericNotFoundException  {
+
+        Optional<Reservation> result = reservationRepository.findById(id);
+        if(result.isPresent()) {
+            return result.get();
+        }
+        else {
+           throw new GenericNotFoundException(id);
+        }
+    }
+
 
 
 }

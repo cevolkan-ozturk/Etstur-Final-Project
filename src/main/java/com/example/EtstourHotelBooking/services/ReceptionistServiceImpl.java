@@ -1,6 +1,7 @@
 package com.example.EtstourHotelBooking.services;
 
 import com.example.EtstourHotelBooking.entity.Bill;
+import com.example.EtstourHotelBooking.entity.FoodItems;
 import com.example.EtstourHotelBooking.entity.Room;
 import com.example.EtstourHotelBooking.repository.BillRepository;
 import com.example.EtstourHotelBooking.repository.RoomRepository;
@@ -47,6 +48,12 @@ public class ReceptionistServiceImpl implements ReceptionistService {
     @Transactional
     public Bill GenerateBill2(Long customerId){
         return new Bill();
+    }
+
+    @Override
+    public Boolean orderFoodItems(List<FoodItems> foodItems) {
+
+        return null;
     }
 
 }

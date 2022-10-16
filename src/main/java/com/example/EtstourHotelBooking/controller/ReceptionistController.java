@@ -51,4 +51,9 @@ public class ReceptionistController {
     public List<Reservation> getAllReservation(){
         return reservationService.getAllReservation();
     }
+
+    @GetMapping("reservation/{id}")
+    public Reservation getReservationById(@PathVariable int id){
+        return reservationService.findReservationById(id);
+    }
 }

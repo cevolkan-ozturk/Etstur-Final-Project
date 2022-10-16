@@ -34,7 +34,7 @@ CREATE TABLE `rooms` (
 --) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-LOCK TABLES `customers` WRITE;
+LOCK TABLES `rooms` WRITE;
 UNLOCK TABLES;
 
 
@@ -59,6 +59,42 @@ CREATE TABLE `reservation` (
 LOCK TABLES `reservation` WRITE;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+                               `order_id` int NOT NULL AUTO_INCREMENT,
+                               `customer_id ` int DEFAULT NULL,
+                               `room_id ` int DEFAULT NULL,
+                               `order_date ` datetime(6) DEFAULT NULL,
+                               `order_status` varchar DEFAULT NULL,
+                               `address` varchar(255) DEFAULT NULL,
+                               `order_delivery_date` datetime(6) DEFAULT NULL,
+                               'order_description' varchar(255) DEFAULT NULL,
+                               PRIMARY KEY (`order_id`),
+                               KEY `FKdwl5vjb9x3rm7pjgyamd9ge8e` (`order_id`));
+                               --CONSTRAINT `FKdwl5vjb9x3rm7pjgyamd9ge8e` FOREIGN KEY (`reservation_user_id`) REFERENCES `user` (`user_id`)
+--) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+LOCK TABLES `orders` WRITE;
+UNLOCK TABLES;
+
+
+DROP TABLE IF EXISTS `order_details`;
+CREATE TABLE `order_details` (
+                               `order_details_id` bigint NOT NULL AUTO_INCREMENT,
+                               `order_id ` bigint DEFAULT NULL,
+                               `food_id ` bigint DEFAULT NULL,
+                               `food_count` int DEFAULT NULL,
+                               `food_price` double DEFAULT NULL,
+                               `order_delivery_description` varchar(255) DEFAULT NULL,
+                               PRIMARY KEY (`order_details_id`),
+                               KEY `FKdwl5vjb9x3rm7pjgyamd9ge8e` (`order_details_id`));
+                               --CONSTRAINT `FKdwl5vjb9x3rm7pjgyamd9ge8e` FOREIGN KEY (`reservation_user_id`) REFERENCES `user` (`user_id`)
+--) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+LOCK TABLES `order_details` WRITE;
+UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
