@@ -31,6 +31,6 @@ public class Customer {
     private String address ;
 
     @Column(name = "room_no")
-    private long roomNo;
+    private String roomNo;
 
 }

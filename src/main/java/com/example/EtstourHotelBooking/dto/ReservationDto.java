@@ -48,7 +48,7 @@ public class ReservationDto {
 
     @NotNull(message = "is required")
     @Size(min=1, message = "is requrired")
-    private int userId;
+    private long customerId;
 
 
 

@@ -46,6 +46,6 @@ import java.util.Date;
         private int stayDays;
 
         @Column(name = "reservation_customer_id")
-        private int customerId;
+        private long customerId;
 
 }

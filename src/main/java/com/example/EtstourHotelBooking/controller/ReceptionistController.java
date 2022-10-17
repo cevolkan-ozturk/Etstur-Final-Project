@@ -1,5 +1,6 @@
 package com.example.EtstourHotelBooking.controller;
 
+import com.example.EtstourHotelBooking.dto.CustomerDto;
 import com.example.EtstourHotelBooking.dto.ReservationDto;
 import com.example.EtstourHotelBooking.entity.Reservation;
 import com.example.EtstourHotelBooking.entity.Room;
@@ -30,14 +31,14 @@ public class ReceptionistController {
     }
 
     @PostMapping("/reservation")
-    public Boolean createReservation (@RequestBody ReservationDto reservationDto) {
-        return reservationService.upsertReservation(reservationDto);
+    public Boolean createReservation (@RequestBody ReservationDto reservationDto,@RequestBody CustomerDto customerDto) {
+        return reservationService.upsertReservation(reservationDto,customerDto);
 
     }
 
     @PutMapping("/reservation")
-    public Boolean updateReservation (@RequestBody ReservationDto reservationDto) {
-        return reservationService.upsertReservation(reservationDto);
+    public Boolean updateReservation (@RequestBody ReservationDto reservationDto,@RequestBody CustomerDto customerDto) {
+        return reservationService.upsertReservation(reservationDto, customerDto);
 
     }
 

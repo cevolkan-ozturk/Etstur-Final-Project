@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface ReceptionistService {
 
+
     public List<Room> findAll();
 
     public List<Room> findRoomByStatus(String status);

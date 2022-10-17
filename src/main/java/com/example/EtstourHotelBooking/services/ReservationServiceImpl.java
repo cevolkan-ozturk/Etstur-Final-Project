@@ -1,8 +1,11 @@
 package com.example.EtstourHotelBooking.services;
 
+import com.example.EtstourHotelBooking.dto.CustomerDto;
 import com.example.EtstourHotelBooking.dto.ReservationDto;
+import com.example.EtstourHotelBooking.entity.Customer;
 import com.example.EtstourHotelBooking.entity.Reservation;
 import com.example.EtstourHotelBooking.exception.GenericNotFoundException;
+import com.example.EtstourHotelBooking.repository.CustomerRepository;
 import com.example.EtstourHotelBooking.repository.ReservationRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -18,14 +21,27 @@ public class ReservationServiceImpl implements ReservationService {
 
     private final ReservationRepository reservationRepository;
 
+    private final CustomerRepository customerRepository;
+
 
     @Override
-    public boolean upsertReservation(ReservationDto reservationDto) {
+    public boolean upsertReservation(ReservationDto reservationDto, CustomerDto customerDto) {
+
+        Customer customer = new Customer();
+
+        customer.setId(customerDto.getId());
+        customer.setCustomerName(customerDto.getCustomerName());
+        customer.setCustomerPhoneNumber(customerDto.getCustomerPhoneNumber());
+        customer.setAddress(customerDto.getAddress());
+        customer.setRoomNo(customerDto.getRoomNo());
+
+        Customer customerNewRecord = customerRepository.save(customer);
+
 
         Reservation reservation = new Reservation();
 
         reservation.setId(reservationDto.getId());
-        reservation.setCustomerId(reservationDto.getUserId());
+        reservation.setCustomerId(customerNewRecord.getId());
         reservation.setArrivalDate(reservationDto.getArrivalDate());
         reservation.setChildren(reservationDto.getChildren());
         reservation.setOpenbuffet(reservationDto.getOpenbuffet());
@@ -37,6 +53,10 @@ public class ReservationServiceImpl implements ReservationService {
         reservation.setId(reservation.getId());
 
         reservationRepository.save(reservation);
+
+
+
+
         return true;
     }
 
