@@ -14,8 +14,6 @@ import java.util.Date;
 @ToString
 public class ReservationDto {
 
-
-
     private int id;
 
     @NotNull(message = "is required")
@@ -42,13 +40,17 @@ public class ReservationDto {
     @Size(min=1, message = "is requrired")
     private Date arrivalDate;
 
+    private Date checkInDate;
+
+    private Date checkOutDate;
+
     @NotNull(message = "is required")
     @Size(min=1, message = "is requrired")
     private int stayDays;
 
     @NotNull(message = "is required")
     @Size(min=1, message = "is requrired")
-    private long customerId;
+    private int customerId;
 
 
 

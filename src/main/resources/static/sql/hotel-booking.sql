@@ -6,7 +6,9 @@ USE `hotel-booking`;
 DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
                                `customer_id` int NOT NULL AUTO_INCREMENT,
+                               'customer_identity_no' int NOT NULL,
                                `customer_name ` varchar(255) DEFAULT NULL,
+                               `customer_surname ` varchar(255) DEFAULT NULL,
                                `customer_phone` int DEFAULT NULL,
                                `address` varchar(255) DEFAULT NULL,
                                `room_no` int DEFAULT NULL,
@@ -49,6 +51,8 @@ CREATE TABLE `reservation` (
                                `reservation_room` varchar(255) DEFAULT NULL,
                                `reservation_num_of_rooms` int DEFAULT NULL,
                                `reservation_stay_days` int DEFAULT NULL,
+                               'check_in_date' datetime(6) DEFAULT NULL ,
+                               'check_out_date' datetime(6) DEFAULT NULL ,
                                `reservation_user_id` int DEFAULT NULL,
                                PRIMARY KEY (`reservation_id`),
                                KEY `FKdwl5vjb9x3rm7pjgyamd9ge8e` (`reservation_user_id`),

@@ -42,10 +42,16 @@ import java.util.Date;
         @Column(name = "reservation_from_date")
         private Date arrivalDate;
 
+       @Column(name = "check_in_date")
+        private Date checkInDate;
+
+        @Column(name = "check_out_date")
+        private Date checkOutDate;
+
         @Column(name = "reservation_stay_days")
         private int stayDays;
 
         @Column(name = "reservation_customer_id")
-        private long customerId;
+        private int customerId;
 
 }

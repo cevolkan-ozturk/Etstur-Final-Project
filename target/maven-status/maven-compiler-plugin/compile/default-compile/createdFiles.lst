@@ -27,6 +27,7 @@ com\example\EtstourHotelBooking\entity\Receptionist.class
 com\example\EtstourHotelBooking\services\CustomerService.class
 com\example\EtstourHotelBooking\dto\ContactInfoDto.class
 com\example\EtstourHotelBooking\repository\ManagerRepository.class
+com\example\EtstourHotelBooking\security\SecurityConfig.class
 com\example\EtstourHotelBooking\repository\ReservationRepository.class
 com\example\EtstourHotelBooking\entity\Customer.class
 com\example\EtstourHotelBooking\entity\Reservation.class

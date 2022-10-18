@@ -14,11 +14,20 @@ import javax.validation.constraints.Size;
 @ToString
 public class CustomerDto {
 
-    private long id;
+    private int id;
+
+
+    @NotNull(message = "is required")
+    @Size(min=1, message = "is required")
+    private Long identityNo;
 
     @NotNull(message = "is required")
     @Size(min=1, message = "is required")
     private String customerName;
+
+    @NotNull(message = "is required")
+    @Size(min=1, message = "is required")
+    private String customerSurname;
 
     @NotNull(message = "is required")
     @Size(min=1, message = "is required")

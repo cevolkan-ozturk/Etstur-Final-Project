@@ -13,9 +13,11 @@ public interface ReceptionistService {
 
     public List<Room> findRoomByStatus(String status);
 
-    public Bill GenerateBill(Long billNo);
+    public Bill GenerateBill(int reservationId);
 
-    public Bill GenerateBill2 (Long customerId);
+    public Boolean CheckIn(int reservationId);
+
+    public Boolean Checkout(int reservationId);
 
     public Boolean orderFoodItems (List<FoodItems> foodItems );
 

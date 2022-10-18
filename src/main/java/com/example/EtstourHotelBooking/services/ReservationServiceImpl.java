@@ -30,7 +30,9 @@ public class ReservationServiceImpl implements ReservationService {
         Customer customer = new Customer();
 
         customer.setId(customerDto.getId());
+        customer.setIdentityNo(customerDto.getIdentityNo());
         customer.setCustomerName(customerDto.getCustomerName());
+        customer.setCustomerSurname(customerDto.getCustomerSurname());
         customer.setCustomerPhoneNumber(customerDto.getCustomerPhoneNumber());
         customer.setAddress(customerDto.getAddress());
         customer.setRoomNo(customerDto.getRoomNo());
@@ -43,6 +45,8 @@ public class ReservationServiceImpl implements ReservationService {
         reservation.setId(reservationDto.getId());
         reservation.setCustomerId(customerNewRecord.getId());
         reservation.setArrivalDate(reservationDto.getArrivalDate());
+        reservation.setCheckInDate(reservationDto.getCheckInDate());
+        reservation.setCheckOutDate(reservationDto.getCheckOutDate());
         reservation.setChildren(reservationDto.getChildren());
         reservation.setOpenbuffet(reservationDto.getOpenbuffet());
         reservation.setPersons(reservationDto.getPersons());
@@ -82,6 +86,7 @@ public class ReservationServiceImpl implements ReservationService {
            throw new GenericNotFoundException(id);
         }
     }
+
 
 
 
