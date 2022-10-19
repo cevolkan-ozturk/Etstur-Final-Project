@@ -43,7 +43,7 @@ public class ReservationServiceImpl implements ReservationService {
         Reservation reservation = new Reservation();
 
         reservation.setId(reservationDto.getId());
-        reservation.setCustomerId(customerNewRecord.getId());
+        reservation.setCustomer(customerNewRecord);
         reservation.setArrivalDate(reservationDto.getArrivalDate());
         reservation.setCheckInDate(reservationDto.getCheckInDate());
         reservation.setCheckOutDate(reservationDto.getCheckOutDate());

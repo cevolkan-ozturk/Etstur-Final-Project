@@ -53,9 +53,9 @@ CREATE TABLE `reservation` (
                                `reservation_stay_days` int DEFAULT NULL,
                                'check_in_date' datetime(6) DEFAULT NULL ,
                                'check_out_date' datetime(6) DEFAULT NULL ,
-                               `reservation_user_id` int DEFAULT NULL,
+                               `customer_id` int DEFAULT NULL,
                                PRIMARY KEY (`reservation_id`),
-                               KEY `FKdwl5vjb9x3rm7pjgyamd9ge8e` (`reservation_user_id`),
+                               KEY `FKdwl5vjb9x3rm7pjgyamd9ge8e` (`customer_id`),
                                CONSTRAINT `FKdwl5vjb9x3rm7pjgyamd9ge8e` FOREIGN KEY (`reservation_user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

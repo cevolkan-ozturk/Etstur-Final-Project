@@ -51,7 +51,8 @@ import java.util.Date;
         @Column(name = "reservation_stay_days")
         private int stayDays;
 
-        @Column(name = "reservation_customer_id")
-        private int customerId;
+        @ManyToOne(fetch = FetchType.LAZY,optional = false)
+        @JoinColumn(name = "customer_id", nullable = false)
+        Customer customer;
 
 }

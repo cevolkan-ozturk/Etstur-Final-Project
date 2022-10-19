@@ -51,14 +51,9 @@ public class ReceptionistServiceImpl implements ReceptionistService {
             throw new GenericNotFoundException(reservationId);
         }
 
-        Optional<Customer> customer = customerRepository.findById(reservation.get().getCustomerId());
-        if(customer.isEmpty()) {
-            throw new GenericNotFoundException(reservationId);
-        }
-
-        bill.setCustomerId(reservation.get().getCustomerId());
-        bill.setCustomerName(customer.get().getCustomerName());
-        bill.setCustomerSurname(customer.get().getCustomerSurname());
+        bill.setCustomerId(reservation.get().getCustomer().getId());
+        bill.setCustomerName(reservation.get().getCustomer().getCustomerName());
+        bill.setCustomerSurname(reservation.get().getCustomer().getCustomerSurname());
         bill.setBillDate(new Date());
         bill.setPrice(reservation.get().getPrice());
 

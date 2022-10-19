@@ -4,6 +4,9 @@ package com.example.EtstourHotelBooking.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 
 @Data
@@ -38,5 +41,10 @@ public class Customer {
 
     @Column(name = "room_no")
     private String roomNo;
+
+    //@OneToMany(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "customer_id")
+    //private Set<Reservation> reservations;
+
 
 }

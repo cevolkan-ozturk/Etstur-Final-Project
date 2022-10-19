@@ -3,7 +3,6 @@ package com.example.EtstourHotelBooking.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Data
 @Getter
@@ -13,7 +12,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "order_details")
-public class OrderDetails {
+public class OrderDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,9 +29,9 @@ public class OrderDetails {
     private int foodCount;
 
     @Column (name = "food_price")
-    private double food_price;
+    private double foodPrice;
 
     @Column (name = "order_details_description")
-    private String order_details_description;
+    private String orderDetailsDescription;
 
 }
